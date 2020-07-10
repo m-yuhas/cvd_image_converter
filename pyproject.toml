@@ -14,8 +14,11 @@ deps = coverage
        pycodestyle
        pydoc-markdown
        pylint
-commands = pycodestyle cvd_image_converter setup.py
-           pylint cvd_image_converter setup.py
+commands = pycodestyle cvd_image_converter test setup.py
+           pylint cvd_image_converter test setup.py
+           coverage run --source=cvd_image_converter -m unittest discover
+           coverage report -m
            python setup.py sdist
+           bash -c 'pydocmd simple cvd_image_converter++ cvd_image_converter.convert_color_palette++ > doc/api_documentation.md'
 whitelist_externals = /bin/bash
 """

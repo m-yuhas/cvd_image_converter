@@ -38,7 +38,10 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9'],
+        'Programming Language :: Python :: 3.9',
+        'Topic :: Multimedia :: Graphics :: Graphics Conversion',
+        'Topic :: Scientific/Engineering :: Visualization',
+        'Topic :: Utilities'],
     packages=['cvd_image_converter'],
     include_package_data=False,
     install_requires=['opencv-python', 'numpy'])
