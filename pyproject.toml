@@ -1,0 +1,21 @@
+[build-system]
+requires = [ "setuptools >= 35.0.2", "wheel >= 0.29.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py35,py36,py36,py37,py38,py39
+
+[testenv]
+deps = coverage
+       numpy
+       opencv-python
+       pycodestyle
+       pydoc-markdown
+       pylint
+commands = pycodestyle cvd_image_converter setup.py
+           pylint cvd_image_converter setup.py
+           python setup.py sdist
+whitelist_externals = /bin/bash
+"""
